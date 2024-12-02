@@ -1,0 +1,990 @@
+/*-----------------------------------
+基本の設定、共通の設定
+-------------------------------------*/
+body{
+  font-family: "BIZ UDGothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* フォント設定 */
+  color: #333;/* 基本の文字色 */
+}
+html{
+  font-size: 100%;/* 基本の文字大きさ */
+}
+img{
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+  /* 基本の写真設定 */
+}
+ul{
+  list-style: none;/* ulの点をなくす */
+}
+a{
+  text-decoration: none;/* 下の線をなくす */
+  color: #333;/* aタグの文字色 */
+  transition: all 0.5s;/* 0.5ｓで変化する */
+}
+a:hover{
+  opacity:  0.7;/* hoverするとopacity0.7にする */
+}
+.en{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /* 英語のフォント設定 */
+}
+h1,h2,h3,h4,p{
+  line-height: 1.1;  /* 文字の行間隔の高さを指定 */
+}
+
+.container {
+  max-width: 1200px; /* コンテンツの最大幅を1200pxに制限 */
+  margin: 0 auto; /* 中央寄せのための上下余白なし＆左右自動 */
+  padding: 0 4%; /* コンテンツ内側の左右に4%の余白 */
+}
+
+/* セクションタイトルの基本スタイル */
+.section-title {
+  text-align: center; /* テキストを中央揃え */
+  margin-bottom: 30px; /* タイトルの下に30pxの余白 */
+  position: relative; /* 疑似要素::afterを使うために相対位置を設定 */
+}
+.section-title::after {
+  content: ""; /* 空の内容（装飾用） */
+  display: block; /* ブロック要素として表示 */
+  width: 150px; /* 下線の幅を150pxに設定 */
+  height: 2px; /* 下線の高さを2pxに設定 */
+  background: #333; /* 下線の色を#333に設定（暗い灰色） */
+  position: absolute; /* 絶対位置を設定 */
+  left: 50%; /* 横方向の中央に配置 */
+  bottom: -10px; /* タイトルから10px下に配置 */
+  transform: translateX(-50%); /* 中央揃えの調整 */
+}
+/* セクションタイトルの見出しのスタイル */
+.section-title h2 {
+  font-size: 36px; /* フォントサイズ設定 */
+}
+/* セクションタイトルの説明テキストのスタイル */
+.section-title p {
+  font-size: 20px; /* フォントサイズ設定 */
+}
+
+.link {
+  position: relative; /* 疑似要素::afterを使うために相対位置を設定 */
+  display: inline-block; /* インラインブロック表示に設定 */
+}
+/* リンクの下線装飾 */
+.link::after {
+  content: ""; /* 空の内容（装飾用） */
+  width: 100%; /* リンク要素の幅いっぱいに設定 */
+  height: 3px; /* 下線の高さを3pxに設定 */
+  background: #FD780F; /* 下線の色をオレンジ色に設定 */
+  position: absolute; /* 絶対位置を設定 */
+  left: 0; /* 左端からスタート */
+  bottom: -2px; /* リンクから2px下に配置 */
+}
+
+
+/* SP（スマートフォン）とTB（タブレット）の非表示設定 */
+.sp, .tb {
+  display: none; /* スマートフォン・タブレット用要素を非表示 */
+}
+
+/* PC（パソコン）表示の設定 */
+.pc {
+  display: inline-block; /* パソコン用要素をインラインブロックで表示 */
+}
+
+
+/*-----------------------------------
+背景の設定
+-------------------------------------*/
+/* 背景画像 */
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 場所指定 */
+  width: 100%;/* 背景に横幅 */
+  height: 100%;/* 背景に高さ */
+  background-image: url("../img/25641727.jpg"); /* 背景に画像 */
+  background-size: cover;       /* 画像を要素にフィット */
+  background-position: center;  /* 中央寄せ */
+ z-index: 1;                   /* オーバーレイの下に配置 */
+}
+
+/* オーバーレイ */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+   /* 場所指定 */
+  width: 100%;/* 横幅 */
+  height: 100%;/* 高さ*/
+  z-index: 2;   /* 背景画像の上に配置 */
+}
+
+
+/*-----------------------------------
+video
+-------------------------------------*/
+
+.video {
+  height: 100vh; /* ビューポートの高さいっぱいに設定 */
+  position: relative; /* 疑似要素::beforeを使うための相対位置を設定 */
+}
+/* グラデーション */
+.video::before {
+  height: 50px; /* グラデーションの高さ設定 */
+  width: 100%; /* 横幅を全体に広げる */
+  content: ""; /* 空の内容（装飾用） */
+  background: linear-gradient(-180deg, rgba(255, 191, 93, 0), rgba(255, 191, 93, 0.5)); /* グラデーション色*/
+  
+  position: absolute;
+  left: 0; 
+  bottom: 0;
+  /* 場所指定 */ 
+}
+
+.video .bg-video {
+  object-fit: cover; /* ビデオを領域いっぱいに埋める */
+  height: 100%; /* ビデオの高さ*/
+  width: 100%; /* ビデオの幅 */
+  vertical-align: bottom; /* ビデオを下に揃える */
+  position: fixed; /* 画面に固定配置 */
+  top: 0;   /* 場所指定 */
+  z-index: -10; /* 配置位置 */
+
+}
+.video h1{
+  width: 100%;/* 横幅を100％*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* 文字を真ん中に配置 */
+  color: #FD780F; /*文字色*/
+  font-size: 48px; /*文字大きさ*/
+  text-align: center; /*真ん中揃え*/
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.4); /*文字に影をつける*/
+}
+
+
+/*-----------------------------------
+profile-heading
+-------------------------------------*/
+
+.profile-heading {
+  position: relative;
+  width: 100%;/* 横幅 */
+  height: 100vh; /* 高さ */
+  overflow: hidden;/* 画面外に出た部分を隠す */
+  padding-top: 20px;/* 上の余白設定 */
+}
+/* 背景画像 */
+.heading-back {
+  opacity: 0.5; /* 背景画像を透過させる */
+}
+
+/* オーバーレイ */
+.heading-overlay {
+  background: rgba(255, 191, 93, 0.5); /* 半透明色を指定 背景画像の上に配置 */
+}
+
+
+
+/*-----------------------------------
+profile-heading1、history
+-------------------------------------*/
+
+.profile-heading1,.history{
+  position: relative; /* レイヤーの位置調整用に相対位置を設定 */
+  z-index: 3; /* 配置位置 */
+  color: #111; /* 文字色 */
+}
+.history a{
+  color: #111;/* aタグ文字色 */
+}
+
+/* プロフィール見出し内の英語タイトルのスタイル */
+.profile-heading1 .en{
+  font-size: 36px; /* フォントサイズ設定 */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* 軽い影を追加して立体感を演出 */
+  margin-bottom: 10px; /* タイトル下に10pxの余白 */
+}
+/* 名前セクション内の段落のスタイル */
+.name p{
+  font-size: 14px;/* フォントサイズ設定 */
+}
+/* 名前セクション内の見出しのスタイル */
+.name h2{
+  font-size: 24px;/* フォントサイズ設定 */
+}
+
+/*history*/
+.history-slide li{
+  padding: 0 10px; /* リストアイテム内の左右に10pxの余白 */
+  position: relative; /* 疑似要素を使用するための相対位置を設定 */
+  z-index: 3; /* 配置位置 */
+}
+.history-1{
+  padding-left: 0!important;/* 左余白を完全に削除 */
+}
+.history-title{
+  font-size: 18px;/* フォントサイズ設定 */
+}
+
+/* 略歴のオレンジの丸 */
+.history-title::after{
+  content: ""; /* 空の内容（装飾用） */
+  display: block; /* ブロック要素として表示 */
+  width: 20px; /* 幅20pxの円形装飾 */
+  height: 20px; /* 高さ20pxの円形装飾 */
+  background: #FD780F; /* オレンジ色の背景 */
+  border-radius: 50px; /* 円形を作るための角丸設定 */
+  margin: 10px 0; /* 上下余白 */
+  position: relative; /* レイヤーの調整用 */
+  z-index: 3; /* 前面に配置 */
+}
+
+/* 各履歴の「::before」装飾線のスタイル */
+.history-1::before,.history-2::before,
+.history-3::before,.history-4::before,
+.history-5::before,.history-6::before,
+.history-7::before,.history-8::before{
+  content: ""; /* 空の内容（装飾用） */
+  width: 100%; /* 幅 */
+  height: 1px; /* 高さ */
+  background: #333; /* 線の色 */
+  display: block; /* ブロック要素として表示 */
+  position: absolute; /* 絶対位置を設定 */
+  left: 0; 
+  top: 59px; 
+  /* 場所指定 */
+  z-index: 1; /* 配置位置 */
+} 
+.history-9::before{
+  content: ""; /* 空の内容（装飾用） */
+  width: 50%; /* 幅 */
+  height: 1px; /* 高さ */
+  background: #333; /* 線の色を濃い灰色に設定 */
+  display: block; /* ブロック要素として表示 */
+  position: absolute; /* 絶対位置を設定 */
+  left: 0; 
+  top: 59px; 
+  /* 場所指定 */
+  z-index: 1;  /* 配置位置 */
+} 
+
+.history-tex{
+  margin-bottom: 10px;/* 下に10pxの余白 */
+}
+.history-tex p{
+  font-size: 16px;/* フォントサイズ設定 */
+  margin-bottom: 5px;/* 下に5pxの余白 */
+}
+.history-9 {
+  width: 120% !important; /* 横幅を120%に拡大 */
+  margin-right: -25%; /* 拡大分を右方向に調整 */
+  position: relative; /* レイヤー調整用の相対位置 */
+}
+.history-9 img{
+  width: 30%; /* 画像の幅を30%に設定 */
+  position: absolute; /* 絶対位置を設定 */
+  bottom: 1%; /* 下端から1%の位置に配置 */
+  right: -40px; /* 右方向に-40px移動 */
+}
+.history-slide img{
+  object-fit: cover;/* 画像を領域いっぱいに埋める */
+}
+.history1-img1,
+.history1-img2,
+.history-3 img{
+  width: 80%; /* 幅を80%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 230px; /* 最大高さを230pxに制限 */
+}
+.history-4 img{
+  width: 80%; /* 幅を80%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 150px; /* 最大高さを150pxに制限 */
+}
+.history-5 img{
+  height: auto; /* 高さを自動調整 */
+  max-height: 230px; /* 最大高さを230pxに制限 */
+}
+.history6-img1{
+  width: 60%; /* 幅を60%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 100px; /* 最大高さを100pxに制限 */
+  margin-left: auto; /* 左に自動余白 */
+  margin-bottom: 5px; /* 下に5pxの余白 */
+}
+.history6-img2{
+  width: 80%; /* 幅を80%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 130px; /* 最大高さを130pxに制限 */
+}
+.history7-imgbox{
+  display: grid; /* グリッドレイアウトを使用 */
+  grid-template-columns: 1fr 1fr; /* 2列に分割 */
+  gap: 5px; /* 各セルの間隔を5pxに設定 */
+}
+.history7-imgbox1 .history7-img1,
+.history7-imgbox2 .history7-img2{
+  margin-bottom: 5px; /* 下に5pxの余白 */
+}
+.history7-img1{
+  height: auto; /* 高さを自動調整 */
+  max-height: 80px; /* 最大高さを80pxに制限 */
+}
+.history7-img2{
+  height: auto; /* 高さを自動調整 */
+  max-height: 180px; /* 最大高さを180pxに制限 */
+}
+.history8-img1{
+  width: 60%; /* 幅を60%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 80px; /* 最大高さを80pxに制限 */
+  margin-left: auto; /* 左に自動余白（右寄せ） */
+  margin-bottom: 5px; /* 下に5pxの余白 */
+}
+.history8-img2{
+  width: 80%; /* 幅を80%に設定 */
+  height: auto; /* 高さを自動調整 */
+  max-height: 120px; /* 最大高さを120pxに制限 */
+}
+
+
+/*-----------------------------------
+exhibition
+-------------------------------------*/
+.exhibition{
+  position: relative; /* 疑似要素を使用するための相対位置を設定 */
+  background: rgba(253, 120, 15, 1.0); /* 背景色をオレンジに設定 */
+  padding: 40px 0; /* パディングを設定 */
+  z-index: 3; /* 他の要素より前面に配置 */
+}
+
+/* グラデーション装飾 */
+.exhibition::before {
+  content: "";/* 空の内容（装飾用） */
+  width: 100%;/* 横幅 */
+  height: 50px;/* 高さ */
+  background: linear-gradient(180deg, rgba(253, 120, 15, 0), rgba(253, 120, 15, 1.0));
+  /* 上部は透明、下部はオレンジ色のグラデーション */
+  position: absolute;
+  top: -50px;
+  left: 0;
+  /* 場所指定 */
+  mix-blend-mode: multiply; /* 境目を自然に */
+}
+.exhibition::after {
+  content: "";/* 空の内容（装飾用） */
+  width: 100%;/* 横幅 */
+  height: 50px;/* 高さ */
+  background: linear-gradient(180deg,  rgba(253, 120, 15, 1),rgba(237, 235, 235, 0));
+  /* 上部はオレンジ色、下部は透明のグラデーション */
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  /* 場所指定 */
+  mix-blend-mode: multiply; /* 境目を自然に */
+}
+
+.exhibition-inner{
+  position: relative; /* 内部要素のレイヤー調整用 */
+  padding: 40px; /* パディングを設定 */
+}
+.exhibition-back{
+  opacity: 1;/* 完全に不透明 */
+}
+.exhibition-overlay{
+  background: rgba(255, 189, 137 ,0.7);/* 背景の色 */
+}
+.exhibition-tex{
+  position: relative; /* レイヤー調整用の相対位置 */
+  z-index: 3; /* 前面に配置 */
+}
+.exhibition-tex dl{
+  display: flex; /* フレックスボックスでレイアウト */
+  flex-wrap: wrap; /* コンテンツを折り返し可能に設定 */
+  align-items: flex-start; /* アイテムを上揃え */
+  justify-content: space-between; /* アイテムを左右に均等配置 */
+}
+.exhibition-tex dt{
+  width: 20%; /* 幅設定 */
+  margin-bottom: 15px; /* 下に15pxの余白 */
+  font-size: 18px; /* フォントサイズ設定 */
+}
+.exhibition-tex dd{
+  width: 78%; /* 幅を78%に設定 */
+  margin-bottom: 15px; /* 下に15pxの余白 */
+}
+.exhibition-tex dd .ex-title{
+  font-size: 18px;/* フォントサイズ設定 */
+  margin-bottom: 5px;/* 下に15pxの余白 */
+}
+.exhibition-tex dd p{
+  margin-left: 15px;/* 左に15pxの余白 */
+}
+
+
+
+/*-----------------------------------
+cw-more-box
+-------------------------------------*/
+
+.cw-more-box{
+  position: relative; /* 疑似要素を使用するための相対位置を設定 */
+  padding: 80px 0; /* パディングを設定 */
+  z-index: 2; /* 配置位置 */
+}
+/* 「cw-more-box」の下部グラデーション装飾 */
+.cw-more-box::after{
+  content: ""; /* 空の内容（装飾用） */
+  width: 100%; /* 横幅 */
+  height: 50px; /* 高さ */
+  background: linear-gradient(180deg, rgba(237, 235, 235, 1), rgba(237, 235, 235, 0)); 
+  /* グラデーション色 */
+  position: absolute; /* 絶対位置を設定 */
+  bottom: -50px; 
+  left: 0; 
+  /* 場所指定 */
+  mix-blend-mode: multiply; /* 境目を自然に */
+
+}
+.cw-back{
+  opacity: 1;/* 背景を完全に不透明に設定 */
+}
+.cw-overlay{
+  background: rgba(247, 247, 247 ,0.7);/* 背景色 */
+}
+.cw-tex{
+  position: relative; /* レイヤー調整用の相対位置 */
+  z-index: 3; /* 他の要素より前面に配置 */
+}
+
+/*-----------------------------------
+creative-works
+-------------------------------------*/
+
+.creative-works{
+  margin-bottom: 80px;/* 下に80pxのマージン */
+}
+.cw-list{
+  max-width: 1000px;/* 最大幅1000px */
+  margin: 0 auto;     /* 左右のマージンを自動調整 */
+}
+.cw-list>li{
+  background-size: cover; /* 背景画像をカバーする */
+  background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+  padding: 15px 20px;  /* 各リストアイテムにパディングを追加 */
+}
+.cw-list1{
+  background-image:url("../img/film01-1.png");/* 背景画像を設定 */
+  background-position: 50% 100%; /* 背景画像の位置を調整 */
+  text-align: center;  /* テキストを中央揃え */
+  margin-bottom: 10px;  /* 下部に10pxの余白 */
+  height: 20vw; /* 高さをビューポート幅の20%に設定 */
+  max-height: 230px; /* 最大高さを230pxに設定 */
+  min-height: 215px; /* 最小高さを215pxに設定 */
+}
+.cw-link1{
+  font-size: 20px;  /* フォントサイズ設定 */
+  font-weight: bold; /* 太字に設定 */
+}
+.cw-link2{
+  font-size: 18px;/* フォントサイズ設定 */
+}
+.cw-list1-detail{
+  display: flex;       /* フレックスボックスを使用 */
+  flex-wrap: wrap;     /* アイテムを折り返す */
+  align-items: flex-end; /* アイテムを下部に揃える */
+  justify-content: center; /* アイテムを中央に配置 */
+  margin-top: 10px;    /* 上部に10pxの余白 */
+}
+.cw-list1-detail li{
+padding: 10px 15px;/* パディングを設定 */
+}
+.cw-list2{
+  background-image: url("../img/film01.gif");/* 背景画像を設定 */
+  background-position: 50% 0%;/* 背景画像の位置を調整 */
+  height: 25vw;  /* 高さをビューポート幅の25%に設定 */
+  max-height: 270px; /* 最大高さを270pxに設定 */
+  min-height: 240px; /* 最小高さを240pxに設定 */
+  display: flex;   /* フレックスボックスを使用 */
+  align-items: flex-end; /* アイテムを下部に揃える */
+}
+.cw-list2-detail{
+  display: flex;       /* フレックスボックスを使用 */
+  flex-wrap: wrap;     /* アイテムを折り返す */
+  align-items: flex-end; /* アイテムを下部に揃える */
+  justify-content: center; /* アイテムを中央に配置 */
+}
+.cw-list2-detail li{
+  padding: 10px 15px;/* パディングを設定 */
+  }
+
+
+  /*-----------------------------------
+more
+-------------------------------------*/
+
+.more{
+  position: relative;/* 相対位置を設定 */
+  padding: 40px;/* パディングを設定 */
+}
+
+.more-overlay{
+background: rgba(255,243,82,0.5);/* 背景色 */
+}
+.more-inner{
+position: relative; /* 相対位置に設定 */
+z-index: 3;/* 他の要素より前面に配置 */
+}
+.more-list>li{
+  margin-bottom: 20px;/* リストアイテムの下に20pxの余白 */
+}
+.more-list1-detail>li{
+  margin-bottom: 10px;/* リストアイテムの下に10pxの余白 */
+}
+.more-list h4{
+  font-size: 18px;/* フォントサイズ設定 */
+}
+.more-list p{
+  margin: 5px 0 0 20px;/* マージン設定 */
+}
+.br2{
+  display: none;/* 要素を非表示に設定 */
+}
+.br1{
+  display: block;/* 要素を表示 */
+}
+
+/*-----------------------------------
+footer
+-------------------------------------*/
+
+footer{
+margin-top: 100vh;/* 上部にビューポートの高さと同じ量のマージンを追加 */
+background:rgba(255,243,82,0.8);/* 半透明の黄色背景を設定 */
+padding: 20px 0;/* パディング設定  */
+text-align: center;/* テキストを中央揃え */
+position: relative; /* 相対位置を設定（子要素で絶対配置するため） */
+z-index: 2; /* 重なり順序を2に設定 */
+}
+/* フッターの上にグラデーション */
+footer::before{
+  content: "";/* 空の内容（装飾用） */
+  width: 100%;/* 幅 */
+  height: 50px;/* 高さ */
+  background: linear-gradient(180deg,  rgba(255,243,82,0),rgba(255,243,82,0.8));
+  /* グラデーション色 */
+  position: absolute;
+  top: -50px;
+  left: 0;
+  /* 場所指定 */
+  mix-blend-mode: multiply; /* 境目を自然に */
+  z-index: 3;
+}
+/* footer .en: フッター内の英語テキストのスタイル */
+footer .en{
+  font-size: 18px;/* フォントサイズ設定 */
+  color: #FD780F;/* テキストカラーをオレンジに設定 */
+  margin-bottom: 5px; /* 下部に5pxのマージンを追加 */
+  font-weight: bold; /* 太字に設定 */
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2); /* 影を追加 */
+}
+/* .copy-right: コピーライト部分のスタイル */
+.copy-right{
+  font-size: 12px;/* フォントサイズ設定 */
+}
+
+
+
+/*-----------------------------------
+レスポンシブ
+-------------------------------------*/
+
+@media (max-width:960px){
+  /*-----------------------------------
+基本の設定、共通の設定
+-------------------------------------*/
+.section-title{
+  margin-bottom: 20px;/* 下部マージン変更 */
+}
+.section-title::after{
+  width: 120px;/* 線の幅変更 */
+  height: 2px;/* 線の高さ変更 */
+  bottom: -8px;/* 場所変更 */
+}
+.section-title h2{
+  font-size: 28px;/* フォントサイズ設定 */
+}
+.section-title p{
+  font-size: 16px;/* フォントサイズ設定 */
+}
+
+.link::after{
+height: 2px;/* リンク下線の高さ変更 */
+}
+  .tb{
+    display: inline-block;/* タブレット要素をインラインブロックで表示 */
+  }
+  .pc{
+    display: none;/* パソコン用要素を非表示 */
+  }
+  /*-----------------------------------
+video
+-------------------------------------*/
+.video h1{
+  font-size: 36px; /* フォントサイズ設定 */
+}
+
+/*-----------------------------------
+profile-heading1、history
+-------------------------------------*/
+.profile-heading1 .en{
+  font-size: 28px;/* フォントサイズ設定 */
+}
+.name p{
+  font-size: 12px;/* フォントサイズ設定 */
+}
+.name h2{
+  font-size: 20px;/* フォントサイズ設定 */
+}
+
+/*history*/
+
+.history-title{
+  font-size: 16px;/* フォントサイズ設定 */
+}
+.history-title::after{
+  width: 15px;
+  height: 15px;
+  /* オレンジの丸の大きさを小さく */
+}
+.history-1::before,.history-2::before,
+.history-3::before,.history-4::before,
+.history-5::before,.history-6::before,
+.history-7::before,.history-8::before{
+  top: 70px;/* 略歴の線の場所変更 */
+} 
+.history-9::before{
+  top: 70px;/* 略歴の線の場所変更 */
+} 
+.history-tex p{
+  font-size: 14px;/* フォントサイズ設定 */
+  margin-bottom: 5px;/* 下部マージン変更 */
+}
+.history-9 {
+  width: 150% !important;/* 幅変更 */
+  margin-right: -50%; /* 拡大した分、位置を調整 */
+}
+.history-9 img{
+  right: 13%;
+  /* 写真の場所変更 */
+}
+
+.history1-img1,
+.history1-img2,
+.history-3 img{
+  width: 90%; /* 親要素の幅に対して90%の幅 */
+  max-height: 270px; /* 高さの上限を270pxに設定 */
+}
+.history-4 img{
+  max-height: 180px;/* 高さの上限を180pxに設定 */
+}
+.history-5 img{
+  width: 90%; /* 親要素の幅に対して90%の幅 */
+  max-height: 270px; /* 高さの上限を270pxに設定 */
+}
+.history6-img1{
+  width: 60%; /* 親要素の幅に対して60%の幅 */
+  max-height: 120px; /* 高さの上限を120pxに設定 */
+}
+.history6-img2{
+  max-height: 150px;/* 高さの上限を150pxに設定 */
+}
+
+
+.history7-img1{
+  max-height: 80px;/* 高さの上限を80pxに設定 */
+}
+.history7-img2{
+  max-height: 200px;/* 高さの上限を200pxに設定 */
+}
+.history8-img1{
+  max-height: 80px;/* 高さの上限を80pxに設定 */
+}
+.history8-img2{
+  max-height: 150px;/* 高さの上限を150pxに設定 */
+}
+
+
+/*-----------------------------------
+exhibition
+-------------------------------------*/
+.exhibition-inner{
+  padding: 40px 15px;/* パディングを設定 */
+}
+
+.exhibition-tex dl{
+  width: 100%;/* 幅設定 */
+}
+.exhibition-tex dt{
+  width: 15%;/* 幅を15％に設定 */
+  margin-bottom: 10px;/* 下部マージン変更 */
+  font-size: 16px;/* フォントサイズ設定 */
+}
+.exhibition-tex dd{
+  width: 80%;/* 幅を80％に設定 */
+  margin-bottom: 10px;/* 下部マージン変更 */
+}
+.exhibition-tex dd .ex-title{
+  font-size: 16px;/* フォントサイズ設定 */
+  margin-bottom: 3px;/* 下部マージン変更 */
+}
+.exhibition-tex dd p{
+  font-size: 14px;/* フォントサイズ設定 */
+}
+
+/*-----------------------------------
+creative-works
+-------------------------------------*/
+
+.creative-works{
+  margin-bottom: 50px;/* 下部マージン変更 */
+}
+.cw-list>li{
+  padding: 15px;/* パディングを設定 */
+}
+.cw-list1{
+  height: 20vw;/* 高さをビューポート幅の20%に設定 */
+  min-height: 175px; /* 高さの最小値を175pxに設定 */
+}
+.cw-link1{
+  font-size: 16px;/* フォントサイズ設定 */
+}
+.cw-link2{
+  font-size: 16px;/* フォントサイズ設定 */
+}
+.cw-list1-detail li{
+padding: 3px 10px;/* パディングを設定 */
+}
+.cw-list2{
+  max-height: 220px; /* 高さの上限を220pxに設定 */
+  min-height: 205px; /* 高さの最小値を205pxに設定 */
+}
+.cw-list2-detail li {
+  padding: 10px;/* パディングを設定 */
+}
+
+ /*-----------------------------------
+more
+-------------------------------------*/
+
+.more{
+  padding: 40px 15px;/* パディングを設定 */
+}
+.more-list h4{
+  font-size: 16px;/* フォントサイズ設定 */
+}
+.more-list p{
+  font-size: 14px;/* フォントサイズ設定 */
+  margin: 3px 0 0 20px;/* マージン変更 */
+}
+
+
+
+/*-----------------------------------
+footer
+-------------------------------------*/
+
+  footer .en{
+    font-size: 16px;/* フォントサイズ設定 */
+  }
+}
+
+@media (max-width:850px){
+  .history-9 img{
+    right: -4%;/* 写真の位置変更 */
+  }
+}
+
+@media (max-width:650px){
+  .history-9 img{
+    right: -18%;/* 写真の位置変更 */
+  }
+  
+/*more　改行位置の調整*/
+  .br1{
+    display: none;
+  }
+  .br2{
+    display: inline-block;
+  }
+}
+
+@media (max-width:551px){
+  /*history*/
+  .history-9 img{
+    right: 20%;/*場所変更*/
+  }
+}
+
+
+@media (max-width:500px){
+  /*-----------------------------------
+基本の設定、共通の設定
+-------------------------------------*/
+
+.section-title::after{
+  width: 80px;/*セクションタイトル下の線の幅変更*/
+}
+.sp{
+  display: inline-block;/* スマホ要素をインラインブロックで表示 */
+}
+
+  /*-----------------------------------
+video
+-------------------------------------*/
+.video h1{
+  font-size: 28px; /* フォントサイズ設定 */
+}
+/* グラデーション */
+.video::before {
+  height: 32px;/*グラデーションの高さ変更*/
+}
+/*-----------------------------------
+profile-heading1、history
+-------------------------------------*/
+.profile-heading1{
+  margin-bottom: 10px;/* マージン変更 */
+}
+.profile-heading1 .en{
+  font-size: 28px;/* フォントサイズ設定 */
+  margin-bottom: 5px;/* マージン変更 */
+}
+.name p{
+  font-size: 12px;/* フォントサイズ設定 */
+}
+.name h2{
+  font-size: 18px;/* フォントサイズ設定 */
+}
+
+/*history*/
+.history-9 {
+  width: 120% !important;/* 幅変更 */
+  margin-right: -20%; /* 拡大した分、位置を調整 */
+}
+.history-9 img{
+  right: -8%;/* 写真の位置変更 */
+}
+
+/*-----------------------------------
+exhibition
+-------------------------------------*/
+
+.exhibition{
+  padding: 32px 0;/* パッディング変更 */
+}
+.exhibition::before {
+  height: 32px;/*グラデーションの高さ変更*/
+  top: -32px;/*グラデーションの位置変更*/
+  }
+.exhibition::after {
+  height: 32px;/*グラデーションの高さ変更*/
+  bottom: -32px;/*グラデーションの位置変更*/
+  }
+  .exhibition-inner{
+    padding: 32px 10px;/* パッディング変更 */
+  }
+  .exhibition-tex dt{
+    width: 100%;/* 幅を100％に変更 */
+    font-size: 14px;/* フォントサイズ設定 */
+    margin-bottom: 3px;/* マージン変更 */
+  }
+  .exhibition-tex dd{
+    width: 100%;/* 幅を100％に変更 */
+  }
+  .sp-1{
+    font-size: 14px;/* フォントサイズ設定 */
+  }
+
+  /*-----------------------------------
+cw-more-box
+-------------------------------------*/
+
+.cw-more-box{
+  padding: 32px 0;/* パッディング変更 */
+}
+.cw-more-box::after{
+  height: 32px;/*グラデーションの高さ変更*/
+  bottom: -32px;/*グラデーションの位置変更*/
+}
+
+/*-----------------------------------
+creative-works
+-------------------------------------*/
+
+.creative-works{
+  margin-bottom: 32px;/* マージン変更 */
+}
+.cw-list>li{
+  padding: 10px 15px;/* パッディング変更 */
+}
+.cw-list1{
+  min-height: 150px;/* 高さの最小値を150pxに設定 */
+}
+.cw-list2{
+  height: 60vw; /* 高さをビューポート幅の60%に設定 */
+  max-height: 250px; /* 高さの上限を250pxに設定 */
+  min-height: 165px; /* 高さの最小値を165pxに設定 */
+}
+
+/*-----------------------------------
+more
+-------------------------------------*/
+
+.more{
+  padding: 32px 10px;/* パッディング変更 */
+}
+.more-list>li{
+  margin-bottom: 10px;/* マージン変更 */
+}
+.more-list1-detail>li{
+  margin-bottom: 5px;/* マージン変更 */
+}
+
+/*-----------------------------------
+footer
+-------------------------------------*/
+
+footer{
+  padding: 10px 0;/* パッディング変更 */
+  }
+  footer::before{
+    height: 32px;/*グラデーションの高さ変更*/
+    top: -32px;/*グラデーションの位置変更*/
+  }
+}
+
+
+@media (max-width:400px){
+
+  /*history*/
+  .history-9 img{
+    right: -20%;/* 写真の位置変更 */
+  }
+
+
+
+  /*creative-works*/
+  .cw-list2{
+    height: 70vw;/* 高さをビューポート幅の70%に設定 */
+    max-height: 275px;/* 高さの上限を275pxに設定 */
+  }
+}
