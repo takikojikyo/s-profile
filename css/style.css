@@ -208,6 +208,7 @@ profile-heading1、history
   color: #111; /* 文字色 */
 }
 
+
 .history a{
   color: #111;/* aタグ文字色 */
 }
@@ -231,12 +232,12 @@ profile-heading1、history
 
 .slick-prev{
   left: 9px;
-  top: 92%;
+  top: 85%;
   z-index: 5;
 }
 .slick-next{
     right:9px;
-    top: 92%;
+    top: 85%;
     z-index: 5;
 }
 .slick-next:before, .slick-prev:before{
@@ -260,7 +261,6 @@ profile-heading1、history
 }
 .history-slide {
   display: flex; /* フレックスボックスを利用してレイアウト調整 */
-  align-items: center; /* 中央揃え */
   overflow: hidden; /* コンテンツが溢れないように */
 }
 
@@ -319,7 +319,7 @@ profile-heading1、history
 .history-9 .history9-img{
   width: 25%; 
   position: absolute; /* 絶対位置を設定 */
-  bottom: -12%; /* 下端から1%の位置に配置 */
+  bottom: -16%; /* 下端から1%の位置に配置 */
   right: 100px; 
 }
 .history-slide img{
@@ -329,13 +329,12 @@ profile-heading1、history
 }
 .history1-img1{
   height: auto; /* 高さを自動調整 */
-  max-height: 120px; /* 最大高さを100pxに制限 */
   margin-bottom: 10px; /* 下に5pxの余白 */
 }
 .history1-img1 img{
   display: inline-block;
   margin-left: 120px;
-  max-height: 120px; /* 最大高さを100pxに制限 */
+  max-height: 17vh; /* 最大高さを100pxに制限 */
 }
 
 .history-tex
@@ -348,51 +347,35 @@ profile-heading1、history
   }
 .history1-img2{
   height: auto; /* 高さを自動調整 */
-  max-height: 150px; /* 最大高さを130pxに制限 */
 }
 .history1-img2 img{
-  max-height: 150px; /* 最大高さを130pxに制限 */
+  max-height: 24vh; /* 最大高さを130pxに制限 */
 }
-.history3-img{
-  margin-top: 50px;
-  height: auto; /* 高さを自動調整 */
-  max-height: 230px; /* 最大高さを220pxに制限 */
-}
+
 .history3-img img{
-  max-height: 230px; /* 最大高さを230pxに制限 */
+  max-height: 36vh; /* 最大高さを230pxに制限 */
 }
-.history4-img{
-  height: auto; /* 高さを自動調整 */
-  max-height: 200px; /* 最大高さを150pxに制限 */
-}
+
 .history4-img img{
   display: inline-block;
   margin-left: 60PX;
-  max-height: 200px; /* 最大高さを150pxに制限 */
+  max-height: 30vh; /* 最大高さを150pxに制限 */
 }
-.history5-img{
-  height: auto; /* 高さを自動調整 */
-  max-height: 250px; /* 最大高さを230pxに制限 */
-}
+
 .history5-img img{
-  max-height: 250px; /* 最大高さを230pxに制限 */
+  max-height: 36vh; /* 最大高さを230pxに制限 */
 }
 .history6-img1{
-  height: auto; /* 高さを自動調整 */
-  max-height: 130px; /* 最大高さを100pxに制限 */
   margin-bottom: 10px; /* 下に5pxの余白 */
 }
 .history6-img1 img{
-  max-height: 130px; /* 最大高さを100pxに制限 */
+  max-height: 17vh; /* 最大高さを100pxに制限 */
 }
-.history6-img2{
-  height: auto; /* 高さを自動調整 */
-  max-height: 165px; /* 最大高さを130pxに制限 */
-}
+
 .history6-img2 img{
   margin-left: 100px;
   display: inline-block;
-  max-height: 165px; /* 最大高さを130pxに制限 */
+  max-height: 28vh; /* 最大高さを130pxに制限 */
 }
 .history7-imgbox{
   display:flex;
@@ -409,31 +392,26 @@ profile-heading1、history
   margin-right: 10px;
 }
 .history7-img1{
-  max-height: 100px; /* 最大高さを80pxに制限 */
+  max-height: 15vh; /* 最大高さを80pxに制限 */
 }
 
 .history7-img2{
-  max-height: 222px; /* 最大高さを180pxに制限 */
+  max-height: 34vh; /* 最大高さを180pxに制限 */
 }
 .history-8 .history-tex{
   margin-bottom: 0px;
 }
 .history8-img1{
-  height: auto; /* 高さを自動調整 */
-  max-height: 110px; /* 最大高さを80pxに制限 */
   margin-bottom: 5px; /* 下に5pxの余白 */
 }
 .history8-img1 img{
-  max-height: 110px; /* 最大高さを80pxに制限 */
+  max-height: 16vh; /* 最大高さを80pxに制限 */
 }
-.history8-img2{
-  height: auto; /* 高さを自動調整 */
-  max-height: 160px; /* 最大高さを120pxに制限 */
-}
+
 .history8-img2 img{
   margin-left: 80px;
   display: inline-block;
-  max-height: 160px; /* 最大高さを120pxに制限 */
+  max-height: 25vh; /* 最大高さを120pxに制限 */
 }
 .br-2{
   display: none;
@@ -744,9 +722,13 @@ profile-heading1、history
 .name h2{
   font-size: 20px;/* フォントサイズ設定 */
 }
-
+.profile-heading1{
+  height: 12vh;
+}
 /*history*/
-
+.history{
+  height: 88vh;
+}
 .history-title{
   font-size: 16px;/* フォントサイズ設定 */
 }
@@ -754,6 +736,15 @@ profile-heading1、history
   width: 15px;
   height: 15px;
   /* オレンジの丸の大きさを小さく */
+}
+.history-slide{
+  height: 80vh;
+}
+.slick-prev{
+  top: 75%;
+}
+.slick-next{
+    top: 75%;
 }
 .history-1::before,.history-2::before,
 .history-3::before,.history-4::before,
@@ -772,77 +763,57 @@ profile-heading1、history
   margin-right: -50%; /* 拡大した分、位置を調整 */
 }
 .history-9 .history9-img{
-  width: 20%;
-  bottom: -15%;
-  right: 30%;
+  width: 30%;
+  bottom: -33%;
+  right: 25%;
   /* 写真の場所変更 */
 }
 
-.history1-img1{
-  max-height: 120px; /* 最大高さを100pxに制限 */
-}
+
 .history1-img1 img{
-  max-height: 120px; /* 最大高さを100pxに制限 */
+  max-height: 20vh; /* 最大高さを100pxに制限 */
 }
-.history1-img2{
-  max-height: 155px; /* 最大高さを130pxに制限 */
-}
+
 .history1-img2 img{
-  max-height: 155px; /* 最大高さを130pxに制限 */
+  max-height: 26vh; /* 最大高さを130pxに制限 */
 }
 .history3-img{
   margin-top: 45px;
-  height: auto; /* 高さを自動調整 */
-  max-height: 200px; /* 最大高さを220pxに制限 */
 }
-.history3-img img{
-  max-height: 200px; /* 最大高さを230pxに制限 */
-}
+
 .history4-img{
   text-align: center;
 }
 .history4-img img{
   margin-left: 0PX;
-  max-height: 190px;/* 高さの上限を170pxに設定 */
 }
-.history-5 img{
-  max-height: 230px; /* 高さの上限を270pxに設定 */
-}
-.history6-img1{
-  max-height: 120px;
-}
-.history6-img1 img {
-  max-height: 120px;
+
+
+.history6-img1 img{
+  max-height: 21vh;
 }
 .history6-img2{
-  max-height: 160px;/* 高さの上限を150pxに設定 */
+  text-align: right;
 }
 .history6-img2 img{
-  margin-left: 90px;
-  max-height: 160px;/* 高さの上限を150pxに設定 */
-}
+  margin-left: 0px;
+  max-height: 29vh;
 
+  }
 
 .history7-img1{
-  max-height: 95px;/* 高さの上限を80pxに設定 */
+  max-height: 17vh;
 }
 .history7-img2{
-  max-height: 213px;/* 高さの上限を200pxに設定 */
+  max-height: 37vh;
 }
-.history8-img1{
-  max-height: 100px;/* 高さの上限を80pxに設定 */
-}
-.history8-img1{
-  max-height: 100px;
-}
+
 .history8-img1 img{
-  max-height: 100px;
+  max-height: 20vh;
 }
-.history8-img2{
-  max-height: 160px;/* 高さの上限を150pxに設定 */
-}
+
 .history8-img2 img{
-  max-height: 160px;/* 高さの上限を150pxに設定 */
+  max-height: 27vh;
 }
 
 
@@ -936,71 +907,62 @@ footer
 }
 
 @media (max-width:850px){
+  .profile-heading {
+    height: 90vh; /* 高さ */
+  }
+  .profile-heading1{
+    height: 12vh;
+  }
+  /*history*/
+  .history{
+    height: 78vh;
+  }
+  .history-tex{
+    margin-bottom: 5vh;
+  }
   .history-9 .history9-img{
-    width: 25%;
-    bottom: -13%;
+    width: 35%;
+    bottom: -25%;
     right: 11%;/* 写真の位置変更 */
   }
   .history1-img1{
     text-align: right;
-    max-height: 125px; /* 最大高さを100pxに制限 */
   }
   .history1-img1 img{
+    max-height: 17vh;
     margin-left: 0;
-    max-height: 125px; /* 最大高さを100pxに制限 */
   }
-  .history1-img2{
-    max-height: 160px; /* 最大高さを130pxに制限 */
-  }
+  
   .history1-img2 img{
-    max-height: 160px; /* 最大高さを130pxに制限 */
+    max-height: 22vh; 
   }
-  .history3-img{
-    margin-top: 55px;
-    max-height: 215px; /* 最大高さを220pxに制限 */
-  }
-  .history3-img img{
-    max-height: 215px; /* 最大高さを230pxに制限 */
-  }
-  .history5-img{
-    margin-top: 45px;
-  }
-  .history6-img1{
-    max-height: 125px;
-  }
+  
   .history6-img1 img {
-    max-height: 125px;
+    max-height: 16vh;
   }
   .history6-img2{
     text-align: right;
-    max-height: 165px;/* 高さの上限を150pxに設定 */
   }
   .history6-img2 img{
     margin-left: 0;
-    max-height: 165px;/* 高さの上限を150pxに設定 */
+    max-height: 20vh;
   }
   .history7-imgbox{
-    margin-top: 50px;
+    margin-top: 10vh;
   }
-  .history7-img1{
-    max-height: 98px;/* 高さの上限を80pxに設定 */
-  }
-  .history7-img2{
-    max-height: 216px;/* 高さの上限を200pxに設定 */
-  }
+ 
   .history8-img1{
-    max-height: 100px;
+    margin-top: 5vh;
   }
   .history8-img1 img{
-    max-height: 100px;
+    max-height: 15vh;
   }
   .history8-img2{
     text-align: right;
-    max-height: 165px;/* 高さの上限を150pxに設定 */
   }
   .history8-img2 img{
     margin-left: 0px;
-    max-height: 165px;/* 高さの上限を150pxに設定 */
+    max-height: 18vh;
   }
   .br-2{
     display: inline-block;
@@ -1012,12 +974,15 @@ footer
 
 @media (max-width:650px){
   .history-9 .history9-img{
-    width: 30%;
-    bottom: -16%;
-    right: -1%;/* 写真の位置変更 */
+    width: 40%;
+    bottom: -22%;
+    right: -4%;/* 写真の位置変更 */
   }
-  .history8-img2 img {
-    max-height: 150px;
+  .history1-img2 img {
+    max-height: 21vh;
+}
+.history6-img2 img {
+  max-height: 19vh;
 }
  .history-title {
     font-size: 15px;
@@ -1040,8 +1005,9 @@ footer
   .history-slide li{
     padding: 0 10px; 
   }
-  
-  
+  .history-tex {
+    margin-bottom: 3vh;
+  }
  
   .history-title::after {
     margin-top: 5px;
@@ -1058,9 +1024,9 @@ footer
 } 
 
 .history-9 .history9-img{
-    width: 20%;
-    right: 42%;
-    bottom: -21%;
+    width: 25%;
+    right: 40%;
+    bottom: -30%;
     /*場所変更*/
   }
 
@@ -1069,70 +1035,49 @@ footer
 }
 .history1-img1 img{
   margin-left: 170px;
+  max-height: 19vh; 
 }
-.history1-img2{
-  max-height: 165px; /* 最大高さを130pxに制限 */
-}
+
 .history1-img2 img{
   margin-left: 20px;
-  max-height: 165px; /* 最大高さを130pxに制限 */
+  max-height: 26vh; 
 }
-.history3-img {
-  margin-top: 35px;
-  max-height: 250px;
-}
-.history3-img img{
-  margin-top: 35px;
-  max-height: 250px;
-}
-.history4-img {
-  max-height: 210px;
+.history5-img img {
+  max-height: 40vh;
 }
 .history4-img img{
-  max-height: 210px;
+  max-height: 33vh;
 }
-.history-5{
-  max-height: 250px;
-}
-.history-5 img {
-  max-height: 250px;
-}
-.history6-img1{
-  max-height: 130px;
-}
+
 .history6-img1 img {
-  max-height: 130px;
+  max-height: 19vh;
 }
 .history6-img2{
   text-align: left;
-  max-height: 170px;
 }
 .history6-img2 img{
   margin-left: 100px;
-  max-height: 170px;
+  max-height: 25vh;
 }
 .history7-imgbox{
   margin-top: 0px;
 }
 .history7-img1 {
-  max-height: 100px;
+  max-height: 15vh;
 }
 .history7-img2 {
-  max-height: 223px;
+  max-height: 34vh;
 }
-.history8-img1{
-  max-height: 110px;
-}
+
 .history8-img1 img{
-  max-height: 110px;
+  max-height: 18vh;
 }
 .history8-img2{
   text-align: left;
-  max-height: 170px;
 }
 .history8-img2 img{
   margin-left: 110px;
-  max-height: 170px;
+  max-height: 22vh;
 }
 .tb-1{
   display: none;
@@ -1187,23 +1132,71 @@ profile-heading1、history
 
 /*history*/
 
-.history-tex p {
-  font-size: 13px;
-}
+
 .history-9 {
   width: 105% !important;/* 幅変更 */
   margin-right: -20%; /* 拡大した分、位置を調整 */
 }
 .history-9 .history9-img{
-  width: 30%;
-  bottom: -70px;
-  right: 23%;/* 写真の位置変更 */
+  width: 40%;
+  bottom: -88px;
+  right: 2%;/* 写真の位置変更 */
 }
 .br-2{
   display: none;
 }
 .br-1{
   display: inline-block;
+}
+.history1-img1{
+  text-align: right;
+}
+.history1-img1 img{
+  margin-left: 0px;
+}
+
+.history1-img2 img{
+  margin-left: 20px;
+}
+.history3-img {
+  margin-top: 8vh;
+}
+
+
+.history6-img1 img {
+  max-height: 20vh;
+}
+.history6-img2{
+  text-align: right;
+}
+.history6-img2 img {
+  margin-left: 0px;
+  max-height: 26vh;
+}
+.history7-imgbox {
+  margin-top: 6vh;
+}
+.history7-img1 {
+  max-height: 14vh;
+}
+
+.history7-img2 {
+  max-height: 31vh;
+}
+
+.history8-img1 {
+  margin-top: 2vh;
+}
+.history8-img1 img{
+  margin-top: 2vh;
+  max-height: 19vh;
+}
+.history8-img2{
+  text-align: right;
+}
+.history8-img2 img{
+  margin-left: 0px;
+  max-height: 24vh;
 }
 /*-----------------------------------
 exhibition
@@ -1307,41 +1300,22 @@ footer{
 
   /*history*/
   .history-9 .history9-img {
-    width: 35%;
-    bottom: -69px;
-    right: 12%;
+    width: 43%;
+    bottom: -90px;
+    right: 8%;
 }
-  .history1-img1{
-    text-align: right;
-  }
-  .history1-img1 img{
-    margin-left: 0px;
-  }
-  .history1-img2{
-    max-height: 165px; /* 最大高さを130pxに制限 */
-  }
   .history1-img2 img{
     margin-left: 20px;
-    max-height: 165px; /* 最大高さを130pxに制限 */
+    max-height: 24vh; 
   }
-  .history-5 img {
-    max-height: 250px;
+  .history6-img1 img {
+    max-height: 19vh;
 }
-.history4-img img {
-  max-height: 200px;
+.history6-img2 img {
+  max-height: 24vh;
 }
 
 
-.history6-img2{
-  text-align: right;
-}
-.history6-img2 img{
-  margin-left: 0px;
-}
-.history8-img2{
-  text-align: right;
-}
-.history8-img2 img{
-  margin-left: 0px;
-}
+
+
 }
