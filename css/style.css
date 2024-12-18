@@ -556,9 +556,7 @@ creative-works
   flex-direction: column;
   justify-content: center;
 }
-.cw-list1{
-  margin-bottom: 10px;  /* 下部に10pxの余白 */
-}
+
 .cw-link1,.cw-link3{
   font-size: 18px;  /* フォントサイズ設定 */
   font-weight: bold; /* 太字に設定 */
@@ -741,10 +739,10 @@ profile-heading1、history
   height: 80vh;
 }
 .slick-prev{
-  top: 75%;
+  top: 70%;
 }
 .slick-next{
-    top: 75%;
+    top: 70%;
 }
 .history-1::before,.history-2::before,
 .history-3::before,.history-4::before,
@@ -1040,7 +1038,7 @@ footer
 
 .history1-img2 img{
   margin-left: 20px;
-  max-height: 26vh; 
+  max-height: 24vh; 
 }
 .history5-img img {
   max-height: 40vh;
@@ -1063,12 +1061,14 @@ footer
   margin-top: 0px;
 }
 .history7-img1 {
-  max-height: 15vh;
+  max-height: 14vh;
 }
 .history7-img2 {
-  max-height: 34vh;
+  max-height: 31vh;
 }
-
+.history8-img1 {
+  margin-top: 3vh;
+}
 .history8-img1 img{
   max-height: 18vh;
 }
@@ -1164,24 +1164,24 @@ profile-heading1、history
 
 
 .history6-img1 img {
-  max-height: 20vh;
+  max-height: 19vh;
 }
 .history6-img2{
   text-align: right;
 }
 .history6-img2 img {
   margin-left: 0px;
-  max-height: 26vh;
+  max-height: 25vh;
 }
 .history7-imgbox {
   margin-top: 6vh;
 }
 .history7-img1 {
-  max-height: 14vh;
+  max-height: 13vh;
 }
 
 .history7-img2 {
-  max-height: 31vh;
+  max-height: 29vh;
 }
 
 .history8-img1 {
@@ -1189,14 +1189,14 @@ profile-heading1、history
 }
 .history8-img1 img{
   margin-top: 2vh;
-  max-height: 19vh;
+  max-height: 18vh;
 }
 .history8-img2{
   text-align: right;
 }
 .history8-img2 img{
   margin-left: 0px;
-  max-height: 24vh;
+  max-height: 22vh;
 }
 /*-----------------------------------
 exhibition
@@ -1245,9 +1245,6 @@ creative-works
   margin-bottom: 32px;/* マージン変更 */
 }
 
-.cw-list1{
-  margin-bottom: 10px;  /* 下部に10pxの余白 */
-}
 
 .cw-link2{
   margin-bottom: 5px;
@@ -1303,6 +1300,9 @@ footer{
     width: 43%;
     bottom: -90px;
     right: 8%;
+}
+.history1-img1 img {
+  max-height: 18vh;
 }
   .history1-img2 img{
     margin-left: 20px;
