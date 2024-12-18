@@ -1,19 +1,20 @@
 $(function () {
   var $historySlide = $(".history-slide").slick({
     autoplay: true, // 自動でスライドさせる
-    speed: 4000, // デフォルトのスライド速度
-    autoplaySpeed: 1000, // 自動再生間隔を長くする 
+    speed: 2000, // デフォルトのスライド速度
+    autoplaySpeed: 13000, // 自動再生間隔を長くする 
     slidesToShow: 2, // 表示するスライド数
     arrows: true, // デフォルトの矢印を表示
 
     responsive: [
 
       {
-        breakpoint: 551,
+        breakpoint: 601,
         settings: {
           slidesToShow: 1, // 表示するスライド数
           centerMode: true, // スライドの中央配置を有効化
-          centerPadding: '3%', // 両端に次のスライドが見えるよう調整, 
+          centerPadding: '0%', // 両端に次のスライドが見えるよう調整, 
+          autoplaySpeed: 10000, // 自動再生間隔を長くする 
         },
       },
     ],
