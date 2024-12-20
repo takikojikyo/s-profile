@@ -422,7 +422,7 @@ profile-heading1、history
   max-height: 34vh; /* 最大高さを180pxに制限 */
 }
 .history-8 .history-tex{
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 .history8-img1{
   margin-bottom: 5px; /* 下に5pxの余白 */
