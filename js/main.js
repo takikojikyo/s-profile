@@ -49,6 +49,10 @@ $(function () {
       $historySlide.slick('slickPlay'); // 自動再生を維持
     }
   });
+
+
+
+
 });
 
 
