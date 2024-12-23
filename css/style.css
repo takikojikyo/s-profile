@@ -1600,4 +1600,12 @@ footer{
   .history-slide li {
     height: auto;
 }
+
+.history-slide{
+  height: auto;
+}
+.exhibition::before {
+  height: 20px;
+  top: -20px;
+}
 }
