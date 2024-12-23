@@ -51,7 +51,14 @@ $(function () {
   });
 
 
-
+  function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh-offset', `${vh}px`);
+  }
+  
+  window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', setViewportHeight);
+  setViewportHeight();
 
 });
 
